@@ -1,20 +1,27 @@
-angular.module('sbtbApp.quiz', [])
+angular.module('sbtbApp-quiz', [])
 
-.controller('quiz', function(Questions) {
+.controller('Quiz', function(Questions, $scope, Links) {
 
   $scope = {};
 
-var getQuestion = function() {
+  $scope.startQuiz = function() {
+    $scope.id = 0;
+    $scope.getQuestion();
+  };
 
-};
+  $scope.getQuestion = function() {
+    var curr_quest = Questions.getQuestion($scope.id);
+    if(curr_quest) {
+      $scope.question = curr_quest.question;
+      $scope.answers = curr_quest.answers;
+      $scope.correct = curr_quest.correct;
+    } else {
+      //i need something else here
+      $scope.ended = 'quiz over';
+    }
+  };
 
-var start= function() {
-  $scope.id = 0;
-  $
-};
+  $scope.answer = function() {
+  };
 
-var answer = function() {
-
-};
-
-})
+});

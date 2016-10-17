@@ -1,7 +1,6 @@
 var app = angular.module('sbtbApp', [])
 
-.factory('Questions', function() {
-
+.factory('Questions', function($http) {
 
   var questions = [{
   question: "What score did Zack get on his SATs?",
@@ -9,42 +8,97 @@ var app = angular.module('sbtbApp', [])
   correct: 2
 }, {
   question: "What is the name of Screech's robot?",
-  incorrect: ["Mike","Kevin", "Harry", "Slater"],
+  answers: ["Mike","Kevin", "Harry", "Slater"],
   correct: 1
 }, {
   question: "What was Slater's football jersey number?",
-  incorrect: [6, 9, 12, 11],
+  answers: [6, 9, 12, 11],
   correct: 0
 }, {
   question: "Finish this line: \n I'm so excited, I'm so excited, I'm so.....",
-  incorrect: ["drunk", "tired", "excited", "scared"],
+  answers: ["drunk", "tired", "excited", "scared"],
   correct: 3
 }, {
   question: "Which is NOT a name of an employee at the Max?",
-  incorrect: ['James', 'Jeff', 'Kelly', 'Bruce'],
+  answers: ['James', 'Jeff', 'Kelly', 'Bruce'],
   correct: 3
 }, {
   question: "What was name of the band the group created?",
-  incorrect: ['Zack Attack', 'Friends Forever', 'The Max', 'The Temptations'],
+  answers: ['Zack Attack', 'Friends Forever', 'The Max', 'The Temptations'],
   correct: 0
 }, {
   question: "What was Screech's dog's name?",
-  incorrect: ['Max', 'Walter', 'Hounddog', 'Sparky'],
+  answers: ['Max', 'Walter', 'Hounddog', 'Sparky'],
   correct: 2
 }, {
   question: "What is Lisa's alias on the Teen Line in 1-900 Crushed?",
-  incorrect: ['Jewel', 'Princess', 'Angel', 'Peaches'],
+  answers: ['Jewel', 'Princess', 'Angel', 'Peaches'],
   correct: 1
 }, {
   question: "What is Jessie Spano's middle name?",
-  incorrect: ['Marie', 'Ann', 'Myrtle', 'Christine'],
+  answers: ['Marie', 'Ann', 'Myrtle', 'Christine'],
   correct: 2
 }, {
   question: "How much money did Lisa charge on her Dad's credit card?",
-  incorrect: ['$394', '$375', '$342', '$386'],
+  answers: ['$394', '$375', '$342', '$386'],
   correct: 3
 }];
 
 //need to iterate through questions and feed them into a controller.
+var getQuestion = function(questionNumber) {
+    if (questionNumber < questions.length) {
+      return questions[questionNumber];
+    } else {
+      return false;
+    }
+};
+return {getQuestion: getQuestion};
+
+})
+
+.factory('Links', function($http) {
+
+  // return $http.get('/api/quiz');
+  return {};
 
 });
+
+
+app.controller('Quiz', function($scope, Questions, Links) {
+
+  $scope = {};
+
+  $scope.startQuiz = function() {
+    $scope.id = 0;
+    $scope.gameOn = true;
+    $scope.gameOver= false;
+    console.log('is this working');
+    $scope.getQuestion();
+  };
+
+  $scope.getQuestion = function() {
+    var curr_quest = Questions.getQuestion($scope.id);
+    if(curr_quest) {
+      $scope.question = curr_quest.question;
+      $scope.answers = curr_quest.answers;
+      $scope.correct = curr_quest.correct;
+    } else {
+      //i need something else here
+      $scope.gameOn = false;
+      $scope.gameOver = true;
+    }
+  };
+
+  $scope.answer = function() {
+  };
+
+});
+
+
+
+
+
+
+
+
+

@@ -7,11 +7,11 @@
   <meta charset="UTF-8">
   <title>Saved by the Bell Quiz</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-  <script src="controllers/app.js"></script>
+
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" ng-controller='Quiz'>
   <div class='navigation'>
     <h2>Saved by the Quiz</h2>
     <ul>
@@ -19,12 +19,17 @@
       <li><a href='/#results'>Results</a></li>
     </ul>
   </div>
+  <br>
+  <button ng-click='startQuiz()'>Start Quiz</button>
+  {{ question }}
 
 
 
-  <ng-view/>
+  <div ng-view></div>
 
   </div>
+  <script src="/controllers/app.js"></script>
+  <!-- <script src="/controllers/quizCtrl.js"></script> -->
 </body>
 
 </html>
