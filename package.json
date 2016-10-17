@@ -1,0 +1,22 @@
+{
+  "name": "saved-by-the-quiz",
+  "version": "1.0.0",
+  "description": "Saved by the Bell Quiz",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efanelle/Saved-by-the-Quiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/efanelle/Saved-by-the-Quiz/issues"
+  },
+  "homepage": "https://github.com/efanelle/Saved-by-the-Quiz#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
