@@ -1,4 +1,4 @@
-# Saved-by-the-Quiz
+# Saved by the Quiz
 
 ## Heading ##
   Test your Saved by the Bell knowledge with a fun (but tough!) quiz.
