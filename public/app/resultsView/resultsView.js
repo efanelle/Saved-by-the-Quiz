@@ -4,8 +4,10 @@ angular.module('sbtbApp.results', [])
 
   $scope.getUsers = function() {
     users.getScores().then(function(resp) {
-      console.log('resp',resp.data)
+      resp.data.forEach(function(user) {
+        user.score = Number(user.score);
+      });
       $scope.users = resp.data;
     });
-  }
+  };
 });

@@ -3,27 +3,28 @@
   <h5 ng-model="data.score" ng-show="gameOn">{{data.username}}'s Current Score: {{data.score}} </h5>
   </div>
   <form name="myForm">
-    <div ng-hide="lastQuestion">
+    <div class="quizForm" ng-hide="lastQuestion">
     <h4> {{ question }} </h4>
 
     <div class="signin" ng-hide="gameOn">
-    Name: <input type="text" ng-model="data.username">
-    <button ng-click="startQuiz()">Let's play!</button>
+    Name: <input type="text" ng-model="data.username" required>
+    <button ng-disabled="myForm.$invalid" ng-click="startQuiz()">Let's play!</button>
     </div>
 
-    <label ng-repeat="answer in answers">
+    <label class="quizForm" ng-repeat="answer in answers">
     <br>
       <input type="radio" ng-model="$parent.radioValue" name="answer" value="{{answer}}"> {{ answer }}  <br></label>
 
       <br>
-    <button ng-show="gameOn" ng-hide="lastQuestion" ng-click="checkAnswer()" type='submit'>Next Question</button>
+    <button class="quizForm" ng-show="gameOn" ng-hide="lastQuestion" ng-disabled="!radioValue" ng-click="checkAnswer()"  type='submit'>Next Question</button>
     </div>
 
-    <div ng-show="lastQuestion">
+    <div class="quizForm" ng-show="lastQuestion">
     <h3> Submit your high score!</h3>
     <button ng-click="addUser()" type='submit'>Submit Score!</button>
     </div>
 
   </form>
+  <!-- <img class="gang" src="http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/belding.jpg"> -->
 
 </div>

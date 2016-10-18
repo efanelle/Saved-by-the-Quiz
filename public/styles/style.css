@@ -3,6 +3,31 @@ body {
   color:  #ff008b;
 
 }
+/*#player {
+  width:50px;
+  height:50px;
+  float:right;
+  display:inline-block;
+  position:relative;
+}
+
+#box, #iframe {
+  height:100%;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+}
+#box {
+  z-index: 0;
+}*/
+#iframe {
+  z-index: 10;
+  opacity: .99;
+  display:none;
+}
+
+
 .content {
   font-family: fantasy;
   font-weight: bold;
@@ -10,7 +35,7 @@ body {
   background-color: black;
   border-radius: 15px;
   padding: 10px;
-  height:500px;
+  min-height:400px;
   text-align:center;
 
 }
@@ -41,7 +66,12 @@ body {
 
 }
 .gang {
-  float:right;
+  padding-top: 50px;
+  height:370px;
+  width:400px;
+  display: block;
+  margin-left:28%;
+
 }
 
 .quizForm {
@@ -58,4 +88,8 @@ button {
 }
 table {
   font: 1.4em;
+  text-align:left;
 }
+/*table th{
+  text-align:left;
+}*/

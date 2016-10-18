@@ -60,7 +60,7 @@ return {getQuestion: getQuestion};
   $scope.count = 0;
   $scope.data = {
       username: '',
-      score: '0'
+      score: 0
     };
   $scope.allData = [];
 
