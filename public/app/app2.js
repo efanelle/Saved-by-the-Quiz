@@ -18,6 +18,6 @@ angular.module('sbtbApp', [
     //   controller: 'ResultsController'
     // })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/start'
     });
   });
