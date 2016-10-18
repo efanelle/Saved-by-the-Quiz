@@ -1,1 +1,10 @@
-quizView.html
+<div class='quizBoard' ng-controller="QuizController">
+  <form name="myForm" ng-submit="checkAnswer()">
+    <h3> {{ question }} </h3>
+    <label ng-repeat="answer in answers">
+      <input type="radio" ng-model="$parent.radioValue" name="answer" value="{{answer}}"> {{ answer }}</label>
+    <button type='submit'>Next Question</button>
+  </form>
+<div id="score">
+  <h6>Current Score: {{count}} </h6>
+</div>

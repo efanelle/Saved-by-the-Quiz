@@ -2,26 +2,26 @@
   "_args": [
     [
       {
-        "raw": "angular@^1.5.8",
+        "raw": "angular-route",
         "scope": null,
-        "escapedName": "angular",
-        "name": "angular",
-        "rawSpec": "^1.5.8",
-        "spec": ">=1.5.8 <2.0.0",
-        "type": "range"
+        "escapedName": "angular-route",
+        "name": "angular-route",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
       },
       "/Users/Erica/Desktop/Code/Saved-by-the-Quiz"
     ]
   ],
-  "_from": "angular@>=1.5.8 <2.0.0",
-  "_id": "angular@1.5.8",
+  "_from": "angular-route@latest",
+  "_id": "angular-route@1.5.8",
   "_inCache": true,
   "_installable": true,
-  "_location": "/angular",
+  "_location": "/angular-route",
   "_nodeVersion": "4.4.7",
   "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/angular-1.5.8.tgz_1469201394611_0.9924397475551814"
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-route-1.5.8.tgz_1469201487889_0.9498146858531982"
   },
   "_npmUser": {
     "name": "angularcore",
@@ -30,21 +30,22 @@
   "_npmVersion": "2.15.8",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "angular@^1.5.8",
+    "raw": "angular-route",
     "scope": null,
-    "escapedName": "angular",
-    "name": "angular",
-    "rawSpec": "^1.5.8",
-    "spec": ">=1.5.8 <2.0.0",
-    "type": "range"
+    "escapedName": "angular-route",
+    "name": "angular-route",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/angular/-/angular-1.5.8.tgz",
-  "_shasum": "925a5392b8c212d09572dc446db7e01264e094cb",
+  "_resolved": "https://registry.npmjs.org/angular-route/-/angular-route-1.5.8.tgz",
+  "_shasum": "964093de7ec8dc5799bd56a93a6ce5f60095674b",
   "_shrinkwrap": null,
-  "_spec": "angular@^1.5.8",
+  "_spec": "angular-route",
   "_where": "/Users/Erica/Desktop/Code/Saved-by-the-Quiz",
   "author": {
     "name": "Angular Core Team",
@@ -54,19 +55,29 @@
     "url": "https://github.com/angular/angular.js/issues"
   },
   "dependencies": {},
-  "description": "HTML enhanced for web apps",
+  "description": "AngularJS router module",
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "925a5392b8c212d09572dc446db7e01264e094cb",
-    "tarball": "https://registry.npmjs.org/angular/-/angular-1.5.8.tgz"
+    "shasum": "964093de7ec8dc5799bd56a93a6ce5f60095674b",
+    "tarball": "https://registry.npmjs.org/angular-route/-/angular-route-1.5.8.tgz"
   },
-  "gitHead": "7e0e546eb6caedbb298c91a9f6bf7de7eeaa4ad2",
+  "gitHead": "e96eff424fdd9689061659603ca59470375bf024",
   "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-route": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
   "keywords": [
     "angular",
     "framework",
     "browser",
+    "router",
     "client-side"
   ],
   "license": "MIT",
@@ -81,7 +92,7 @@
       "email": "pete@bacondarwin.com"
     }
   ],
-  "name": "angular",
+  "name": "angular-route",
   "optionalDependencies": {},
   "readme": "ERROR: No README data found!",
   "repository": {
