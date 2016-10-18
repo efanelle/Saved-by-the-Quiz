@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="sbtbApp">
+<html lang="en" >
 
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -7,29 +7,39 @@
   <meta charset="UTF-8">
   <title>Saved by the Bell Quiz</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-
 </head>
 
-<body>
+<body ng-app="sbtbApp">
   <div class="container" ng-controller='Quiz'>
-  <div class='navigation'>
-    <h2>Saved by the Quiz</h2>
-    <ul>
-      <li><a href='/#quiz'>Quiz</a></li>
-      <li><a href='/#results'>Results</a></li>
-    </ul>
+    <div class='navigation'>
+      <h2>Saved by the Quiz</h2>
+      <ul>
+        <li><a href='/#quiz'>Quiz</a></li>
+        <li><a href='/#results'>Results</a></li>
+      </ul>
+    </div>
+    <div class='startUp' ng-hide='gameOn'>
+      <p> Welcome to the SBTB Quiz</p>
+      <button ng-click="startQuiz()">Test me!</button>
+    </div>
+    <div class='quizBoard' ng-show='gameOn' ng-hide='gameOver'>
+    <form name="myForm" ng-submit="checkAnswer()">
+      <h3> {{ question }} </h3>
+        <label ng-repeat="answer in answers">
+          <input type="radio" ng-model="$parent.radioValue" name="answer" value="{{answer}}"> {{ answer }}</label>
+
+      <button type='submit' >Next Question</button>
+      </form>
+
+  <div id="score">
+    <h6>Current Score: {{count}} </h6>
   </div>
-  <br>
-  <button ng-click='startQuiz()'>Start Quiz</button>
-  {{ question }}
-
-
-
-  <div ng-view></div>
-
+    </div>
+    <!--   <div ng-view></div> -->
   </div>
-  <script src="/controllers/app.js"></script>
-  <!-- <script src="/controllers/quizCtrl.js"></script> -->
+  <script src="/app/app.js"></script>
+  <!-- <script src="/app/quizView/quizView.js"></script> -->
+  <!-- <script src="/app/startView/startView.js"></script> -->
 </body>
 
 </html>

@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/efanelle/Saved-by-the-Quiz#readme",
   "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
     "ejs": "^2.5.2",
     "express": "^4.14.0"
   }
