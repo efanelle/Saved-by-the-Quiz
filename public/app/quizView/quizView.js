@@ -78,7 +78,7 @@ return {getQuestion: getQuestion};
       $scope.answers = curr_quest.answers;
       $scope.correct = curr_quest.correct;
     } else {
-      $scope.gameOn = false;
+      // $scope.gameOn = false;
       $scope.gameOver = true;
     }
   };

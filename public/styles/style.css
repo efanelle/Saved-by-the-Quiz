@@ -2,7 +2,7 @@ body {
   background-color: blue;
   color: magenta;
 }
-img {
+.saved {
   display: inline-block;
   height:200px;
   width:200px;
@@ -25,6 +25,9 @@ img {
 .nav-pills a{
   color:magenta;
   border:1px solid yellow;
+}
+.gang {
+  float:right;
 }
 
 button {
