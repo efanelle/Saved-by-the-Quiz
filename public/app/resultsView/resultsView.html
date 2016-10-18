@@ -1,0 +1,19 @@
+<div class="views" class='results' ng-controller="ResultsController">
+  <div ng-init="getUsers()">
+  <h1> RESULTS </h1>
+    <table class = "table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="user in users | orderBy:'-score'">
+        <td>{{user.username}}</td>
+        <td>{{user.score}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

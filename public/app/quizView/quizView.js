@@ -1,4 +1,4 @@
-angular.module('sbtbApp.quiz', [])
+angular.module('sbtbApp.quiz', ['sbtbApp.services'])
 .factory('Questions', function() {
   var questions = [{
   question: "What score did Zack get on his SATs?",
@@ -54,18 +54,22 @@ return {getQuestion: getQuestion};
 
 })
 
-.controller('QuizController', function(Questions, $scope, $location) {
+.controller('QuizController', function(Questions, $scope, $location, users) {
 
   $scope.id = 0;
   $scope.count = 0;
+  $scope.data = {
+      username: '',
+      score: '0'
+    };
+  $scope.allData = [];
 
   $scope.changeView = function() {
     $location.path('/quiz');
     $scope.startQuiz();
-  }
+  };
 
   $scope.startQuiz = function() {
-    console.log('is this working');
     $scope.gameOn = true;
     $scope.gameOver = false;
     $scope.getQuestion();
@@ -84,14 +88,23 @@ return {getQuestion: getQuestion};
   };
 
   $scope.checkAnswer = function() {
-    console.log($scope.radioValue, $scope.correct);
     if ($scope.radioValue === $scope.correct) {
-      console.log('you are so smart');
       $scope.count++;
-      console.log($scope.count);
+      $scope.data.score = $scope.count;
     }
     $scope.id++;
+    if($scope.id===10){
+      $scope.lastQuestion = true;
+    }
+
     $scope.getQuestion();
+  };
+
+  $scope.addUser = function() {
+    console.log($scope.data);
+    $scope.allData.push($scope.data);
+    users.newUser($scope.data);
+    $location.path('/results');
   };
 
 });

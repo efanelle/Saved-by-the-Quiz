@@ -1,6 +1,7 @@
 angular.module('sbtbApp', [
   'sbtbApp.start',
   'sbtbApp.quiz',
+  'sbtbApp.results',
   'ngRoute'
 ])
 .config(function ($routeProvider) {
@@ -13,10 +14,10 @@ angular.module('sbtbApp', [
       templateUrl: 'app/quizView/quizView.html',
       controller: 'QuizController'
     })
-    // .when('/results', {
-    //   templateUrl: 'app/resultsView/resultsView.html',
-    //   controller: 'ResultsController'
-    // })
+    .when('/results', {
+      templateUrl: 'app/resultsView/resultsView.html',
+      controller: 'ResultsController'
+    })
     .otherwise({
       redirectTo: '/start'
     });

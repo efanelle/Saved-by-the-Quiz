@@ -1,18 +1,29 @@
-<div class='quizBoard' ng-controller="QuizController">
+<div class='quizBoard' class="views" ng-controller="QuizController">
 <div id="score">
-  <h5 ng-show="gameOn">{{username}}'s Current Score: {{count}} </h5>
+  <h5 ng-model="data.score" ng-show="gameOn">{{data.username}}'s Current Score: {{data.score}} </h5>
   </div>
-  <form name="myForm" >
+  <form name="myForm">
+    <div ng-hide="lastQuestion">
     <h4> {{ question }} </h4>
+
     <div class="signin" ng-hide="gameOn">
-    Name: <input type="text" ng-model="username">
+    Name: <input type="text" ng-model="data.username">
     <button ng-click="startQuiz()">Let's play!</button>
     </div>
+
     <label ng-repeat="answer in answers">
     <br>
       <input type="radio" ng-model="$parent.radioValue" name="answer" value="{{answer}}"> {{ answer }}  <br></label>
+
       <br>
-    <button ng-show="gameOn" ng-click="checkAnswer()" type='submit'>Next Question</button>
+    <button ng-show="gameOn" ng-hide="lastQuestion" ng-click="checkAnswer()" type='submit'>Next Question</button>
+    </div>
+
+    <div ng-show="lastQuestion">
+    <h3> Submit your high score!</h3>
+    <button ng-click="addUser()" type='submit'>Submit Score!</button>
+    </div>
+
   </form>
 
 </div>

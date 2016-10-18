@@ -1,0 +1,20 @@
+{
+  "name": "saved-by-the-quiz",
+  "description": "Saved by the Bell Quiz",
+  "main": "server.js",
+  "authors": [
+    "Erica Fanelle <efanelle@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/efanelle/Saved-by-the-Quiz",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-onload": "^0.5.0"
+  }
+}

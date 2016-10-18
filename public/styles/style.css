@@ -1,6 +1,18 @@
 body {
-  background-color: blue;
-  color: magenta;
+  background-color: #0066ff;
+  color:  #ff008b;
+
+}
+.content {
+  font-family: fantasy;
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: black;
+  border-radius: 15px;
+  padding: 10px;
+  height:500px;
+  text-align:center;
+
 }
 .saved {
   display: inline-block;
@@ -25,9 +37,15 @@ body {
 .nav-pills a{
   color:magenta;
   border:1px solid yellow;
+  font-weight: bold;
+
 }
 .gang {
   float:right;
+}
+
+.quizForm {
+  text-align:left;
 }
 
 button {
@@ -37,4 +55,7 @@ button {
 #score {
   float:right;
   display: block;
+}
+table {
+  font: 1.4em;
 }

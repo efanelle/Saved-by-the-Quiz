@@ -6,4 +6,4 @@ angular.module('sbtbApp.start', [])
   };
 
 
-})
+});
