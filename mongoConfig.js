@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/sbtbusers');
-// mongoose.connect('mongodb://efanelle:password@ds061506.mlab.com:61506/sbtbusers');
+// mongoose.connect('mongodb://localhost/sbtbusers');
+mongoose.connect(process.env.MONGOLAB_URI);
+// console.log(process.env.MONGOLAB_URI);
 
 
 
