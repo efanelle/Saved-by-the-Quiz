@@ -1,33 +1,24 @@
 body {
   background-color: #0066ff;
   color:  #ff008b;
-
 }
-/*#player {
-  width:50px;
-  height:50px;
-  float:right;
-  display:inline-block;
-  position:relative;
+button {
+  color:blue;
+  margin-bottom: 10px;
 }
-
-#box, #iframe {
-  height:100%;
-  width:100%;
-  position:absolute;
-  top:0;
-  left:0;
+table {
+  font: 1.4em;
+  text-align:left;
 }
-#box {
-  z-index: 0;
-}*/
 #iframe {
   z-index: 10;
   opacity: .99;
   display:none;
 }
-
-
+#score {
+  float:right;
+  display: block;
+}
 .content {
   font-family: fantasy;
   font-weight: bold;
@@ -37,7 +28,27 @@ body {
   padding: 10px;
   min-height:400px;
   text-align:center;
-
+}
+.gang {
+  height:40%;
+  width:40%;
+}
+.jumbotron h1 {
+  margin-left: 10px;
+}
+.jumbotron {
+  background-color: yellow;
+}
+.nav  {
+  padding-bottom: 20px;
+}
+.nav-pills a{
+  color:magenta;
+  border:1px solid yellow;
+  font-weight: bold;
+}
+.quizForm {
+  text-align:left;
 }
 .saved {
   display: inline-block;
@@ -47,49 +58,13 @@ body {
   margin-left: -30px;
   padding-right: 10px;
 }
-
-.jumbotron h1 {
-  margin-left: 10px;
-}
-.jumbotron {
-  background-color: yellow;
-}
-
-.nav  {
-  padding-bottom: 20px;
+.startup {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
-.nav-pills a{
-  color:magenta;
-  border:1px solid yellow;
-  font-weight: bold;
-
-}
-.gang {
-  padding-top: 50px;
-  height:370px;
-  width:400px;
-  display: block;
-  margin-left:28%;
-
-}
-
-.quizForm {
-  text-align:left;
-}
-
-button {
-  color:blue;
-}
-
-#score {
-  float:right;
-  display: block;
-}
-table {
-  font: 1.4em;
-  text-align:left;
-}
 /*table th{
   text-align:left;
 }*/
